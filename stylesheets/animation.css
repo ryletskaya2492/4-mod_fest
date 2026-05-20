@@ -1,0 +1,27 @@
+.mainMenuLink {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.mainMenuLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3em;
+    width: 0;
+    height: 0.08em;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.mainMenuLinkk:hover {
+    color: white;
+}
+
+.mainMenuLink:hover::after {
+    width: 100%;
+}
+
+.mainMenuLink.active::after {
+    width: 100%;
+}
