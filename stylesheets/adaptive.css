@@ -112,4 +112,7 @@
     .burger.open span:nth-child(3) {
         transform: rotate(-45deg);
     }
+    .bask.hide {
+        display: none;
+    }
 }
