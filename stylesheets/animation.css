@@ -1,6 +1,16 @@
 .mainMenuLink {
     position: relative;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.mainMenuLink.active {
+    font-weight: 600;
+    color: white;
 }
 
 .mainMenuLink::after {
@@ -14,7 +24,7 @@
     transition: width 0.3s ease;
 }
 
-.mainMenuLinkk:hover {
+.mainMenuLink:hover {
     color: white;
 }
 

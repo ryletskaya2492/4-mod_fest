@@ -53,7 +53,46 @@ body {
 
 }
 
-.cart img {
+.bask img {
     width: 2vw;
     display: block;
+}
+
+.burger {
+    display: none;
+}
+.burger.open {
+    position: fixed;
+    top: 5vh;
+    right: 6%;
+    z-index: 20;
+}
+
+.burger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.burger.open span:nth-child(2) {
+    display: none;
+}
+
+.burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+}
+
+.bask {
+    position: relative;
+    z-index: 5;
+}
+
+.logo {
+    position: relative;
+    z-index: 20;
+}
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
 }
