@@ -1120,6 +1120,68 @@
     margin-top: 2vw;
     padding: 3vw;
     font-size: 3.4vw;
+}.errorPage {
+    height: 100vh;
+}
+.bigError {
+    left: -35%;
+    top: 0;
+    width: 170%;
+    height: 100%;
+    gap: 2vw;
+}
+.bigError span {
+    font-size: 82vw;
+}
+.errorBox {
+    width: 88%;
+    padding: 5vw 4vw 6vw;
+}
+.errorBox h1 {
+    font-size: 11vw;
+    line-height: 1.05;
+}
+.errorBox p {
+    margin-top: 4vw;
+    font-size: 4.8vw;
+    line-height: 1.2;
+}
+.homeButton {
+    top: 62%;
+    width: 58%;
+    padding: 3vw 0;
+    font-size: 3.5vw;
+}.errorPage {
+    height: 100vh;
+}
+.bigError {
+    left: -35%;
+    top: 0;
+    width: 170%;
+    height: 100%;
+    gap: 2vw;
+}
+.bigError span {
+    font-size: 82vw;
+}
+.errorBox {
+    width: 88%;
+    padding: 5vw 4vw 6vw;
+}
+.errorBox h1 {
+    font-size: 11vw;
+    line-height: 1.05;
+}
+.errorBox p {
+    margin-top: 4vw;
+    font-size: 4.8vw;
+    line-height: 1.2;
+}
+.homeButton {
+    top: 62%;
+    width: 58%;
+    padding: 3vw 0;
+    font-size: 3.5vw;
 }
 
 }
