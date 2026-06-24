@@ -19,13 +19,17 @@ body {
 }
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     padding: 0 3%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #262626;
+    background-color: rgba(38, 38, 38, 0.9);
+    backdrop-filter: blur(1vw);
 }
 
 .logo {
@@ -34,26 +38,48 @@ body {
 }
 
 .logo img {
-    width: 3vw;
+    width: 2.6vw;
     display: block;
 }
 
 .nav {
     display: flex;
-    gap: 4vw;
+    gap: 3vw;
 }
 
 .mainMenuLink {
+    position: relative;
     font-family: "Manrope", sans-serif;
-    font-size: 20px;
+    font-size: 1.2vw;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mainMenuLink.active,
+.mainMenuLink:hover {
+    color: white;
 }
 
 .mainMenuLink.active {
     font-weight: 600;
-    color: white;
+}
+
+.mainMenuLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3em;
+    width: 0;
+    height: 0.08em;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.mainMenuLink:hover::after,
+.mainMenuLink.active::after {
+    width: 100%;
 }
 
 .bask {
@@ -67,13 +93,14 @@ body {
 }
 
 .bask img {
-    width: 2vw;
+    width: 1.6vw;
     height: auto;
+    display: block;
 }
 
 .basketText {
     font-family: "Manrope", sans-serif;
-    font-size: 1.2vw;
+    font-size: 1vw;
     font-weight: 400;
     color: white;
 }
@@ -81,7 +108,7 @@ body {
 .headerRight {
     display: flex;
     align-items: center;
-    gap: 3vw;
+    gap: 2.5vw;
 }
 
 .burger {
@@ -108,7 +135,6 @@ body {
     position: absolute;
     transform: rotate(-45deg);
 }
-
 .mainPage {
     width: 100%;
     background-color: #262626;
@@ -319,6 +345,11 @@ body {
     font-weight: 600;
     color: #262626;
     cursor: pointer;
+}
+.regButton:hover {
+    background-color: white;
+    color: #262626;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .raspisanie {
@@ -1152,7 +1183,7 @@ body {
     padding: 0.2vw 0.3vw;
     background-color: #111;
     font-family: "Manrope", sans-serif;
-    font-size: 0.75vw;
+    font-size: 1.1vw;
     line-height: 1.05;
     color: white;
 }

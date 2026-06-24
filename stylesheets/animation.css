@@ -45,3 +45,67 @@
         transform: translateX(-50%);
     }
 }
+
+.shopWord {
+    animation-name: shopWordGlitch;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1);
+}
+
+.wordFind {
+    animation-delay: 0s;
+}
+
+.wordOwn {
+    animation-delay: 0.12s;
+}
+
+.wordStyle {
+    animation-delay: 0.24s;
+}
+
+.wordIn {
+    animation-delay: 0.36s;
+}
+
+.wordMistakes {
+    animation-delay: 0.48s;
+}
+
+@keyframes shopWordGlitch {
+    0% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    68% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    72% {
+        opacity: 0.35;
+        text-shadow: 0.5vw 0 #008be8;
+    }
+
+    76% {
+        opacity: 1;
+        text-shadow: -0.5vw 0 #ff6720;
+    }
+
+    80% {
+        opacity: 0.6;
+        text-shadow: 0.35vw 0 #008be8, -0.35vw 0 #ff6720;
+    }
+
+    84% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: none;
+    }
+}

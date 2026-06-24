@@ -95,8 +95,8 @@ body {
 }
 
 .homeButton:hover {
-    background-color: white;
-    color: #262626;
+    background-color: #017DD6;
+    color: #ffffff;
 }
 
 @media (max-width: 414px) {
