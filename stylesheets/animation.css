@@ -35,3 +35,13 @@
 .mainMenuLink.active::after {
     width: 100%;
 }
+
+@keyframes lineMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

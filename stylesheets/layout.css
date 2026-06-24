@@ -22,15 +22,19 @@ body {
     width: 100%;
     height: 15vh;
     padding: 0 3%;
-    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #262626;
 }
 
+.logo {
+    position: relative;
+    z-index: 20;
+}
+
 .logo img {
-    width: 5vw;
+    width: 3vw;
     display: block;
 }
 
@@ -50,13 +54,14 @@ body {
 .mainMenuLink.active {
     font-weight: 600;
     color: white;
-
 }
 
 .bask {
+    position: relative;
+    z-index: 5;
     display: flex;
     align-items: center;
-    gap: 1.4vw;
+    gap: 0.5vw;
     text-decoration: none;
     color: white;
 }
@@ -66,21 +71,23 @@ body {
     height: auto;
 }
 
-.cartCounter {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.5vw;
+.basketText {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2vw;
     font-weight: 400;
-    line-height: 1;
     color: white;
 }
 
-.productCnt {
-    color: white;
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
 }
 
 .burger {
     display: none;
 }
+
 .burger.open {
     position: fixed;
     top: 5vh;
@@ -89,8 +96,8 @@ body {
 }
 
 .burger.open span:nth-child(1) {
-    transform: rotate(45deg);
     position: absolute;
+    transform: rotate(45deg);
 }
 
 .burger.open span:nth-child(2) {
@@ -98,180 +105,1437 @@ body {
 }
 
 .burger.open span:nth-child(3) {
-    transform: rotate(-45deg);
     position: absolute;
+    transform: rotate(-45deg);
 }
 
-.bask {
-    position: relative;
-    z-index: 5;
+.mainPage {
+    width: 100%;
+    background-color: #262626;
 }
 
-.logo {
+.firstScreen {
     position: relative;
-    z-index: 20;
+    width: 100%;
+    min-height: 70vw;
+    padding: 0 4%;
+    overflow: hidden;
 }
-.headerRight {
+
+.topLine,
+.middleLine {
+    width: 100%;
+    height: 0.08vw;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.topLine {
+    margin-top: 1vw;
+}
+
+.middleLine {
+    display: none;
+    margin-top: 1.5vw;
+}
+
+.mainTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 2vw;
+}
+
+.mainTitle h1 {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 5vw;
+    font-weight: 400;
+    line-height: 1.15;
+    color: white;
+}
+
+.titleRight p {
+    margin: 0;
+    padding-top: 1vw;
+    font-family: "Feature Mono", monospace;
+    font-size: 18vw;
+    font-weight: 400;
+    line-height: 0.9;
+    color: white;
+}
+
+.mainInfo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 2vw;
+}
+
+.textLeft,
+.textRight {
+    width: 20%;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: 1.35;
+    color: white;
+}
+
+.textRight {
+    margin-left: auto;
+}
+
+.mainPic {
+    position: absolute;
+    left: 31%;
+    top: 1.7vw;
+    width: 38%;
+    display: block;
+    z-index: 3;
+}
+
+.blueLine {
+    position: absolute;
+    left: 0;
+    top: 34vw;
+    width: 100%;
+    overflow: hidden;
+    background-color: #008be8;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.blueLine p {
+    margin: 0;
+    padding: 0.7vw 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.4vw;
+    color: white;
+    animation: lineMove 15s linear infinite;
+}
+
+.regButton {
+    position: absolute;
+    left: 39.5%;
+    top: 50vw;
+    width: 21%;
+    padding: 1vw 0;
+    background: none;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(38, 38, 38, 0.75);
+    backdrop-filter: blur(1vw);
+    z-index: 50;
+}
+
+.popup.open {
+    display: flex;
+}
+
+.popupBox {
+    position: relative;
+    width: 35%;
+    padding: 3%;
+    background-color: #262626;
+    border: 0.08vw solid white;
+}
+
+.closePopup {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    border: none;
+    background: none;
+    font-size: 3vw;
+    line-height: 1;
+    color: white;
+    cursor: pointer;
+}
+
+.popupBox h2 {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 3vw;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.popupText {
+    margin: 1vw 0 2vw;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2vw;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.regForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.regForm input,
+.regForm select {
+    width: 100%;
+    padding: 1vw;
+    background-color: transparent;
+    border: 0.08vw solid rgba(255, 255, 255, 0.6);
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    color: white;
+}
+
+.regForm input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.regForm select {
+    color: white;
+}
+
+.regForm button {
+    margin-top: 1vw;
+    padding: 1vw;
+    background-color: white;
+    border: none;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 600;
+    color: #262626;
+    cursor: pointer;
+}
+
+.raspisanie {
+    position: relative;
+    width: 100%;
+    min-height: 65vw;
+    padding: 3% 4% 6%;
+    background-color: #262626;
+    overflow: hidden;
+}
+
+.rasTitle {
+    margin: 0 0 4vw;
+    font-family: "Feature Mono", monospace;
+    font-size: 6vw;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    color: white;
+}
+
+.eventBlock {
+    position: relative;
+    width: 100%;
+}
+
+.eventLine {
+    position: relative;
+    width: 100%;
+    padding: 1.5vw 0;
+    border-top: 0.08vw dashed rgba(255, 255, 255, 0.25);
+    transition: background-color 0.3s ease;
+}
+
+.eventLine:last-child {
+    border-bottom: 0.08vw dashed rgba(255, 255, 255, 0.25);
+}
+
+.eventLine p {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 4.2vw;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    color: white;
+}
+
+.eventLine:hover {
+    background-color: #ff6720;
+}
+
+.poster {
+    position: absolute;
+    width: 15vw;
+    display: none;
+    z-index: 4;
+}
+
+.posterLeft {
+    left: 2vw;
+    top: -5vw;
+}
+
+.posterRight {
+    right: 2vw;
+    top: -5vw;
+}
+
+.eventLine:hover .poster {
+    display: block;
+}
+
+.moreButton {
+    display: block;
+    width: 20%;
+    margin: 5vw auto 0;
+    padding: 1vw 0;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.moreButton:hover {
+    background-color: white;
+    color: #262626;
+}
+
+.simpleBlock {
+    width: 100%;
+    padding: 4% 4% 4%;
+    background-color: #262626;
+}
+
+.simpleTop {
     display: flex;
     align-items: center;
     gap: 3vw;
 }
 
-body {
-    background-color: #242424;
-    color: #a7a7a7;
+.simpleTop h2,
+.simpleMiddle h2,
+.simpleBottomText {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 12vw;
+    font-weight: 400;
+    line-height: 0.95;
+    color: white;
 }
 
-.shopPage {
+.simpleTop img {
+    width: 61%;
+    height: 9vw;
+    object-fit: cover;
+}
+
+.simpleMiddle {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    margin-top: 1vw;
+}
+
+.simpleMiddle img {
+    width: 50%;
+    height: 11vw;
+    object-fit: cover;
+}
+
+.simpleMiddle h2 {
+    margin-left: auto;
+}
+
+.simpleBottomText {
+    margin-top: 1vw;
+    font-size: 13vw;
+}
+
+.simpleButton {
+    display: block;
+    width: 22%;
+    margin: 4vw auto 0;
+    padding: 1vw 0;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.simpleButton:hover {
+    background-color: white;
+    color: #262626;
+}
+
+.merch {
+    width: 100%;
+    padding: 4% 3% 5%;
+    background-color: #262626;
+}
+
+.merchTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.merchTop h2 {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 6vw;
+    font-weight: 400;
+    line-height: 1;
+    color: white;
+}
+
+.merchTop p {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.2vw;
+    color: white;
+}
+
+.merchList {
+    margin-top: 4vw;
+    border-top: 0.08vw dashed rgba(255, 255, 255, 0.25);
+}
+
+.merchItem {
     position: relative;
-    min-height: 140vw;
-    padding: 0;
-    background-color: #242424;
+    display: flex;
+    align-items: center;
+    min-height: 7vw;
+    border-bottom: 0.08vw dashed rgba(255, 255, 255, 0.25);
+}
+
+.merchNum {
+    width: 25%;
+    margin: 0;
+    padding-left: 3%;
+    font-family: "Feature Mono", monospace;
+    font-size: 3.7vw;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.merchName {
+    width: 35%;
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 3.7vw;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.merchPhoto {
+    position: absolute;
+    right: 14%;
+    top: 50%;
+    width: 17vw;
+    height: 21vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 0.25vw dashed #ff6720;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.merchPhoto img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.buyLink {
+    margin-left: auto;
+    margin-right: 1%;
+    display: none;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.2vw;
+    color: #ff6720;
+    text-decoration: underline;
+    z-index: 6;
+}
+
+.merchItem:hover .merchNum,
+.merchItem:hover .merchName {
+    color: #ff6720;
+}
+
+.merchItem:hover .merchPhoto {
+    display: flex;
+}
+
+.merchItem:hover .buyLink {
+    display: block;
+}
+
+.merchButton {
+    display: block;
+    width: 22%;
+    margin: 4vw auto 0;
+    padding: 1vw 0;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.merchButton:hover {
+    background-color: white;
+    color: #262626;
+}
+
+.connectBlock {
+    width: 92%;
+    margin: 4%;
+    padding: 7% 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0d86d8;
+}
+
+.connectText {
+    width: 45%;
+}
+
+.connectText h2 {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 7vw;
+    font-weight: 400;
+    line-height: 1.2;
+    color: white;
+}
+
+.connectForm {
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+.connectForm input {
+    width: 100%;
+    padding: 0 0 0.8vw;
+    background: none;
+    border: none;
+    border-bottom: 0.08vw solid white;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.2vw;
+    color: white;
+    outline: none;
+}
+
+.connectForm input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.formRow {
+    display: flex;
+    gap: 5vw;
+}
+
+.formRow input {
+    width: 50%;
+}
+
+.connectForm button {
+    width: 100%;
+    padding: 1.2vw 0;
+    background: none;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.connectForm button:hover {
+    background-color: white;
+    color: #0d86d8;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 55vw;
+    padding: 6% 4% 0;
+    background-color: #262626;
     overflow: hidden;
 }
 
-.shopHero {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
+.footerLinks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10vw;
+    position: relative;
+    z-index: 5;
 }
 
-.heroWord {
+.footerLeft,
+.footerRight {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+}
+
+.footerLink {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.3vw;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.footerLink.active,
+.footerLink:hover {
+    color: white;
+}
+
+.footerInfo {
+    width: 100%;
+    margin-top: 4vw;
+    display: flex;
+    gap: 15vw;
+    position: relative;
+    z-index: 5;
+}
+
+.footerInfo p:nth-child(3) {
+    margin-left: 4vw;
+}
+
+.footerInfo p {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 1vw;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.oopsPictures {
     position: absolute;
-    font-family: 'Manrope', sans-serif;
-    font-size: 4.8vw;
+    left: 4%;
+    bottom: 4vw;
+    width: 92%;
+    height: 25vw;
+    z-index: 1;
+}
+
+.oopsImg {
+    position: absolute;
+    width: 100%;
+}
+
+.oopsOne {
+    top: 0;
+}
+
+.oopsTwo {
+    top: 7vw;
+}
+
+.oopsThree {
+    top: 14vw;
+}
+
+.oopsMobile {
+    display: none;
+}
+
+.personaj {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 34vw;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.eventsPage {
+    width: 100%;
+    background-color: #262626;
+}
+
+.eventsCover {
+    position: relative;
+    width: 100%;
+    min-height: 54vw;
+    padding: 0 4%;
+    overflow: hidden;
+}
+
+.eventsCover h1 {
+    margin: 0;
+    padding-top: 1vw;
+    font-family: "Feature Mono", monospace;
+    font-size: 15vw;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: -0.04em;
-    color: #a7a7a7;
+    text-align: center;
+    color: white;
+}
+
+.eventsLine,
+.eventsBottomLine {
+    width: 100%;
+    height: 0.08vw;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.eventsLine {
+    margin-top: 3vw;
+}
+
+.eventsBottomLine {
+    position: absolute;
+    left: 4%;
+    bottom: 3vw;
+    width: 92%;
+}
+
+.eventsInfo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 6vw;
+}
+
+.eventsTextLeft,
+.eventsTextRight {
+    width: 20%;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: 1.35;
+    color: white;
+}
+
+.eventsTextLeft {
+    margin-left: 6vw;
+}
+
+.eventsTextRight {
+    margin-right: 6vw;
+}
+
+.eventsPic {
+    position: absolute;
+    left: 50%;
+    top: 2.3vw;
+    width: 27vw;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.eventsRun {
+    position: absolute;
+    left: 0;
+    top: 34vw;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #008be8;
+    z-index: 2;
+}
+
+.eventsRun p {
+    margin: 0;
+    padding: 0.7vw 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.4vw;
+    color: white;
+    animation: lineMove 15s linear infinite;
+}
+
+.eventsList {
+    width: 100%;
+    padding: 3% 4% 5%;
+    background-color: #262626;
+}
+
+.eventItem {
+    border-bottom: 0.08vw solid rgba(255, 255, 255, 0.35);
+}
+
+.eventItem:first-child {
+    border-top: 0.08vw solid rgba(255, 255, 255, 0.35);
+}
+
+.eventTop {
+    display: flex;
+    align-items: center;
+    padding: 2vw 0;
+}
+
+.eventDate {
+    width: 12%;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2vw;
+    color: white;
+}
+
+.eventTop h2 {
+    width: 50%;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: white;
     text-transform: uppercase;
 }
 
-.heroWordFind {
-    left: 29vw;
-    top: 5vw;
+.eventArrow {
+    width: 1.7vw;
+    height: 1.7vw;
+    margin-left: auto;
+    border: none;
+    border-right: 0.08vw solid white;
+    border-bottom: 0.08vw solid white;
+    background: none;
+    transform: rotate(45deg);
+    cursor: pointer;
 }
 
-.heroWordOwn {
-    right: 5vw;
-    top: 5vw;
+.eventItem.open .eventArrow {
+    transform: rotate(225deg);
 }
 
-.heroWordStyle {
-    left: 1.6vw;
-    top: 40vw;
+.eventContent {
+    display: none;
+    padding-bottom: 2.5vw;
 }
 
-.heroWordIn {
-    left: 66vw;
-    top: 50vw;
+.eventItem.open .eventContent {
+    display: flex;
+    justify-content: space-between;
 }
 
-.heroWordMistakes {
-    left: 30vw;
-    top: 93vw;
+.eventText {
+    width: 35%;
+    margin-left: 12%;
 }
 
-.productList {
-    position: relative;
-    z-index: 2;
+.eventText p {
+    width: 70%;
+    margin: 0 0 2vw;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.eventButton {
+    display: block;
+    width: 40%;
+    padding: 0.9vw 0;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 1vw;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.eventButton:hover {
+    background-color: white;
+    color: #262626;
+}
+
+.eventPosters {
+    width: 45%;
+    display: flex;
+    gap: 0.5vw;
+    justify-content: flex-end;
+}
+
+.eventPosters img {
+    width: 31%;
+    object-fit: cover;
+}
+
+.shopPage {
     width: 100%;
-    height: 130vw;
+    background-color: #262626;
 }
 
-.product {
-    position: absolute;
+.shopCover {
+    width: 92%;
+    min-height: 50vw;
+    margin: 0 auto 4vw;
+    display: flex;
+    border-top: 0.08vw solid white;
+    border-bottom: 0.08vw solid white;
+}
+
+.shopPictures {
+    width: 34%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 0.08vw solid white;
+}
+
+.shopBanka {
+    width: 65%;
+}
+
+.shopTextBlock {
+    position: relative;
+    width: 66%;
+    padding: 3vw;
     display: flex;
     flex-direction: column;
 }
 
-.productImage {
-    width: 100%;
-    aspect-ratio: 1 / 1;
+.shopTextBlock h1 {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 11vw;
+    font-weight: 400;
+    line-height: 0.9;
+    color: white;
+}
+
+.shopTextBlock p {
+    width: 45%;
+    margin: 4vw 0 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2vw;
+    line-height: 1.35;
+    color: white;
+}
+
+.shopSonik {
+    position: absolute;
+    right: 3vw;
+    bottom: 2.5vw;
+    display: block;
+    width: 30vw;
+}
+
+.shopCoverButton {
+    width: 18vw;
+    margin-top: auto;
+    padding: 0.8vw 0;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.9vw;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.shopCoverButton:hover {
     background-color: white;
+    color: #262626;
+}
+
+.shopGoods {
+    position: relative;
+    width: 100%;
+    height: 95vw;
+    padding: 0 2%;
+    margin-bottom: 15vw;
+    background-color: #262626;
+    overflow: visible;
+}
+
+.shopWord {
+    position: absolute;
+    font-family: "Feature Mono", monospace;
+    font-size: 5vw;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.wordFind {
+    left: 25vw;
+    top: 2vw;
+}
+
+.wordOwn {
+    right: 7vw;
+    top: 2vw;
+}
+
+.wordStyle {
+    left: 2vw;
+    top: 41vw;
+}
+
+.wordIn {
+    left: 53vw;
+    top: 41vw;
+}
+
+.wordMistakes {
+    left: 25vw;
+    top: 67vw;
+}
+
+.good {
+    position: absolute;
+}
+
+.goodPic {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
-.productImage img {
-    width: 86%;
-    height: 86%;
+.goodPic img {
+    width: 85%;
+    height: 85%;
     object-fit: contain;
 }
 
-.productBottom {
+.blueGood .goodPic {
+    border: 0.12vw solid #008be8;
+}
+
+.orangeGood .goodPic {
+    border: 0.12vw solid #ff6720;
+}
+
+.blueGood:hover .goodPic {
+    background-color: #008be8;
+}
+
+.orangeGood:hover .goodPic {
+    background-color: #ff6720;
+}
+
+.goodBottom {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 0.4vw;
+    margin-top: 0.2vw;
 }
 
-.productText {
-    background-color: #111;
-    color: white;
-    padding: 0.35vw 0.55vw;
-}
-
-.productText h3,
-.productText p {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.8vw;
-    font-weight: 400;
-    line-height: 1;
+.goodBottom p {
     margin: 0;
-    text-transform: uppercase;
+    padding: 0.2vw 0.3vw;
+    background-color: #111;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.75vw;
+    line-height: 1.05;
+    color: white;
 }
 
-.productCart {
-    width: 2vw;
-    height: 2vw;
+.goodBottom button {
+    width: 1.7vw;
+    height: 1.7vw;
     padding: 0;
-    background: transparent;
     border: none;
+    background: none;
     cursor: pointer;
 }
 
-.productCart img {
+.goodBottom button img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.product:nth-child(1) {
-    width: 26vw;
-    left: 1.6vw;
-    top: 6vw;
+.goodCard {
+    width: 22vw;
+    height: 29vw;
+    left: 2vw;
+    top: 3vw;
 }
 
-.product:nth-child(2) {
-    width: 13vw;
-    left: 43vw;
-    top: 19vw;
+.goodCup {
+    width: 11vw;
+    height: 13vw;
+    left: 36vw;
+    top: 16vw;
 }
 
-.product:nth-child(3) {
-    width: 13vw;
-    right: 1.6vw;
-    top: 19vw;
+.goodLight {
+    width: 10vw;
+    height: 13vw;
+    right: 3vw;
+    top: 16vw;
 }
 
-.product:nth-child(4) {
-    width: 12.5vw;
-    left: 14vw;
-    top: 52vw;
+.goodSpichki {
+    width: 11vw;
+    height: 13vw;
+    left: 25vw;
+    top: 42vw;
 }
 
-.product:nth-child(5) {
-    width: 26vw;
-    right: 1.6vw;
-    top: 51.5vw;
+.goodShopper {
+    width: 22vw;
+    height: 29vw;
+    right: 3vw;
+    top: 42vw;
 }
 
-.product:nth-child(6) {
-    width: 13vw;
-    right: 1.6vw;
-    top: 93vw;
+.goodDisk {
+    width: 22vw;
+    height: 29vw;
+    left: 2vw;
+    top: 67vw;
+}
+
+.goodCd {
+    width: 11vw;
+    height: 13vw;
+    left: 37vw;
+    top: 82vw;
+}
+
+.goodKosti {
+    width: 11vw;
+    height: 13vw;
+    right: 3vw;
+    top: 82vw;
+}
+
+.bookPage {
+    width: 100%;
+    background-color: #262626;
+}
+
+.bookCover {
+    position: relative;
+    width: 100%;
+    min-height: 55vw;
+    padding: 0 3%;
+    background-color: #262626;
+    overflow: hidden;
+}
+
+.bookCover h1 {
+    margin: 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 9.5vw;
+    font-weight: 400;
+    line-height: 0.95;
+    color: white;
+    text-align: center;
+}
+
+.bookLine,
+.bookBottomLine {
+    width: 100%;
+    height: 0.08vw;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bookLine {
+    margin-top: 1.5vw;
+}
+
+.bookCenter {
+    position: relative;
+    width: 100%;
+    height: 29vw;
+}
+
+.bookRun {
+    position: absolute;
+    left: -3%;
+    top: 13.5vw;
+    width: 106%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #008be8;
+    z-index: 1;
+}
+
+.bookRun p {
+    margin: 0;
+    padding: 0.7vw 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.4vw;
+    color: white;
+    animation: lineMove 15s linear infinite;
+}
+
+.bookCar {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 48vw;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.bookButton {
+    display: block;
+    width: 21vw;
+    margin: 1vw auto 0;
+    padding: 1vw 0;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 1vw;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.bookButton:hover {
+    background-color: white;
+    color: #262626;
+}
+
+.bookBottomLine {
+    margin-top: 3.5vw;
+}
+
+.bookSlider {
+    width: 100%;
+    padding: 4% 4% 7%;
+    background-color: #262626;
+}
+
+.bookSlider h2 {
+    margin: 0 0 4vw;
+    font-family: "Feature Mono", monospace;
+    font-size: 6vw;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    color: white;
+}
+
+.sliderWrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sliderBox {
+    width: 84%;
+    min-height: 36vw;
+    padding: 4vw 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ed4f17;
+}
+
+.sliderText {
+    width: 24%;
+    height: 28vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 1.5vw;
+}
+
+.sliderText h3 {
+    margin: 0 0 2vw;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 1.1;
+    color: white;
+}
+
+.slideText,
+.slideTextTwo {
+    margin: 0 0 1.6vw;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 400;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.sliderButton {
+    display: block;
+    width: 100%;
+    margin-top: 2vw;
+    padding: 1vw 0;
+    border: 0.08vw solid white;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.9vw;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sliderButton:hover {
+    background-color: white;
+    color: #ed4f17;
+}
+
+.sliderImage {
+    width: 72%;
+    height: 28vw;
+}
+
+.sliderImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.sliderArrow {
+    width: 4vw;
+    height: 4vw;
+    border: none;
+    background: none;
+    font-family: "Manrope", sans-serif;
+    font-size: 5vw;
+    font-weight: 200;
+    line-height: 1;
+    color: white;
+    cursor: pointer;
+}
+
+.sliderArrow:hover {
+    opacity: 0.6;
+}
+
+.bookGallery {
+    width: 100%;
+    padding: 4% 4% 8%;
+    background-color: #262626;
+}
+
+.bookGallery h2 {
+    margin: 0 0 5vw;
+    font-family: "Feature Mono", monospace;
+    font-size: 6vw;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    color: white;
+}
+
+.galleryColumns {
+    width: 100%;
+    display: flex;
+    gap: 1.5vw;
+    align-items: flex-start;
+}
+
+.galleryLeft,
+.galleryRight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.galleryTopRow,
+.galleryBottomRow {
+    display: flex;
+    gap: 1.5vw;
+}
+
+.galleryCard {
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.orangeGallery {
+    border: 0.12vw solid #ff6720;
+}
+
+.blueGallery {
+    border: 0.12vw solid #008be8;
+}
+
+.orangeGallery:hover {
+    background-color: #ff6720;
+}
+
+.blueGallery:hover {
+    background-color: #008be8;
+}
+
+.galleryCard h3 {
+    margin: 0 0 1vw;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.15vw;
+    font-weight: 400;
+    line-height: 1;
+    color: white;
+    text-align: center;
+}
+
+.galleryCard img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    display: block;
+}
+
+.galleryCard p {
+    margin: 1vw 0 0;
+    font-family: "Feature Mono", monospace;
+    font-size: 1.1vw;
+    line-height: 1;
+    color: white;
+    text-align: center;
+}
+
+.gallerySmall {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.galleryWide,
+.galleryBig {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.galleryWide img {
+    width: 58%;
+    height: 58%;
+}
+
+.galleryBig img {
+    width: 74%;
+    height: 74%;
 }

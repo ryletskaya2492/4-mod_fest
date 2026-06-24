@@ -8,142 +8,140 @@ burger.onclick = function () {
   bask.classList.toggle("hide");
 };
 
-let products = [
-  {
-    id: 1,
-    title: 'Карта',
-    price: 500,
-    image: 'images/i1.png'
-  },
-  {
-    id: 2,
-    title: 'Спички',
-    price: 300,
-    image: 'images/i2.png'
-  },
-  {
-    id: 3,
-    title: 'Шопер',
-    price: 1200,
-    image: 'images/i3.png'
-  },
-  {
-    id: 4,
-    title: 'Диск',
-    price: 700,
-    image: 'images/i4.png'
-  },
-  {
-    id: 5,
-    title: 'Зажигалка',
-    price: 450,
-    image: 'images/i5.png'
-  },
-  {
-    id: 6,
-    title: 'Карта',
-    price: 500,
-    image: 'images/i6.png'
-  }
-]
+let regButton = document.querySelector(".regButton");
+let popup = document.querySelector(".popup");
+let closePopup = document.querySelector(".closePopup");
 
-if (!localStorage.getItem('cart')) {
-  localStorage.setItem('cart', JSON.stringify([]))
+if (regButton) {
+  regButton.onclick = function () {
+    popup.classList.add("open");
+  };
 }
 
-renderProducts()
-updateCartCount()
-
-function renderProducts() {
-  let productList = document.querySelector('.productList')
-
-  if (!productList) {
-    return
-  }
-
-  productList.innerHTML = ''
-
-  products.forEach((product) => {
-    let productCard = document.createElement('article')
-    productCard.classList.add('product')
-
-    productCard.innerHTML = `
-      <div class="productImage">
-        <img src="${product.image}" alt="${product.title}" />
-      </div>
-
-      <div class="productBottom">
-        <div class="productText">
-          <h3>${product.title}</h3>
-          <p>${product.price}₽</p>
-        </div>
-
-        <button class="productCart" type="button" onclick="addToCart(${product.id})">
-          <img src="images/basket.svg" alt="Добавить в корзину" />
-        </button>
-      </div>
-    `
-
-    productList.appendChild(productCard)
-  })
+if (closePopup) {
+  closePopup.onclick = function () {
+    popup.classList.remove("open");
+  };
 }
 
-function setCart(cart) {
-  localStorage.setItem('cart', JSON.stringify(cart))
+let eventLines = document.querySelectorAll(".eventLine");
 
-  updateCartCount()
-  renderProducts()
+eventLines.forEach(function (line) {
+  line.onclick = function () {
+    eventLines.forEach(function (item) {
+      item.classList.remove("open");
+    });
+
+    line.classList.add("open");
+  };
+});
+let merchItems = document.querySelectorAll(".merchItem");
+
+merchItems.forEach(function (item) {
+  item.onclick = function () {
+    merchItems.forEach(function (card) {
+      card.classList.remove("open");
+    });
+
+    item.classList.add("open");
+  };
+});
+let eventItems = document.querySelectorAll(".eventItem");
+
+eventItems.forEach(function (item) {
+  let button = item.querySelector(".eventArrow");
+
+  button.onclick = function () {
+    eventItems.forEach(function (otherItem) {
+      if (otherItem !== item) {
+        otherItem.classList.remove("open");
+      }
+    });
+
+    item.classList.toggle("open");
+  };
+});
+let basketText = document.querySelector(".basketText");
+let goodButtons = document.querySelectorAll(".goodBottom button");
+
+let basketCount = 0;
+
+goodButtons.forEach(function (button) {
+  button.onclick = function () {
+    basketCount = basketCount + 1;
+    basketText.textContent = "(" + basketCount + ")";
+  };
+});
+let slideTitle = document.querySelector(".slideTitle");
+let slideText = document.querySelector(".slideText");
+let slideTextTwo = document.querySelector(".slideTextTwo");
+let slideImage = document.querySelector(".slideImage");
+
+let prevSlide = document.querySelector(".prevSlide");
+let nextSlide = document.querySelector(".nextSlide");
+
+let slides = [
+  {
+  title: "ОШИБКА ЦИКЛА",
+  text: "ошибка цикла возникает, когда система снова возвращается к одному действию. процесс продолжается, но движения вперёд нет.",
+  textTwo: "в книге эта ошибка показана как замкнутое пространство, где повтор становится главным событием.",
+  image: "images/k_1.png",
+},
+  {
+    title: "ОШИБКА ЗНАЧЕНИЯ",
+    text: "ошибка значения появляется, когда данные не совпадают с ожиданиями системы. всё выглядит правильно, но внутри возникает конфликт.",
+    textTwo: "этот раздел показывает, как неверное значение может изменить логику интерфейса и превратить порядок в сбой.",
+    image: "images/k_2.png",
+  },
+  {
+    title: "ОШИБКА ТЕКСТУР",
+    text: "ошибка текстур возникает, когда поверхность объекта загружается неправильно или полностью исчезает.",
+    textTwo: "визуальный мир начинает распадаться: материалы путаются, формы теряют привычный вид, а изображение становится нестабильным.",
+    image: "images/k_3.png",
+  },
+  {
+  title: "ОШИБКА ЗАГРУЗКИ",
+  text: "ошибка загрузки — это ожидание, которое не заканчивается. система обещает результат, но не показывает его.",
+  textTwo: "в книге эта ошибка раскрывается через зависшие состояния, пустые экраны и остановленный процесс.",
+  image: "images/k_4.png",
+},
+  {
+    title: "КОНФЕРЕНС ЗАЛ",
+    text: "конференс зал — пространство фестиваля, где ошибки обсуждаются как часть цифровой культуры.",
+    textTwo: "здесь лекции, разговоры и визуальные материалы собираются в одну систему, где сбой становится темой исследования.",
+    image: "images/k_5.png",
+  },
+];
+
+let currentSlide = 0;
+
+function showSlide() {
+  slideTitle.textContent = slides[currentSlide].title;
+  slideText.textContent = slides[currentSlide].text;
+  slideTextTwo.textContent = slides[currentSlide].textTwo;
+  slideImage.src = slides[currentSlide].image;
 }
 
-function getCart() {
-  return JSON.parse(localStorage.getItem('cart')) || []
-}
+if (nextSlide) {
+  nextSlide.onclick = function () {
+    currentSlide = currentSlide + 1;
 
-function getProductCount(productId) {
-  let cart = getCart()
-  let item = cart.find((p) => p.id === productId)
-
-  return item ? item.quantity : 0
-}
-
-function removeFromCart(productId) {
-  let cart = getCart()
-  let index = cart.findIndex((p) => p.id === productId)
-
-  if (index !== -1) {
-    if (cart[index].quantity > 1) {
-      cart[index].quantity -= 1
-    } else {
-      cart.splice(index, 1)
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
     }
-  }
 
-  setCart(cart)
+    showSlide();
+  };
 }
 
-function addToCart(productId) {
-  let cart = getCart()
-  let index = cart.findIndex((p) => p.id === productId)
+if (prevSlide) {
+  prevSlide.onclick = function () {
+    currentSlide = currentSlide - 1;
 
-  if (index !== -1) {
-    cart[index].quantity += 1
-  } else {
-    let item = products.find((p) => p.id === productId)
-
-    if (item) {
-      cart.push({ ...item, quantity: 1 })
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
     }
-  }
 
-  setCart(cart)
-}
-
-function updateCartCount() {
-  let cart = getCart()
-  let cnt = cart.reduce((sum, item) => sum + (item.quantity || 0), 0)
-  let productCnt = document.querySelector('.productCnt')
-
-  if (productCnt) {
-    productCnt.innerHTML = cnt
-  }
+    showSlide();
+  };
 }

@@ -12,32 +12,36 @@
     }
 
     .logo img {
-        width: 18vw;
+        width: 12vw;
     }
 
     .headerRight {
         margin-top: 5%;
-
         display: flex;
         align-items: center;
         gap: 8vw;
-
         position: relative;
         z-index: 20;
+    }
+
+    .bask {
+        gap: 2vw;
     }
 
     .bask img {
         width: 8vw;
     }
 
+    .basketText {
+        font-size: 4vw;
+    }
+
     .burger {
         width: 13vw;
         height: 8vw;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
         padding: 0;
         border: none;
         background: none;
@@ -49,51 +53,11 @@
         background-color: white;
     }
 
-    .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-
-        display: none;
-        flex-direction: column;
-        gap: 0;
-
-        padding: 32vw 5% 0;
-
-        background-color: rgba(38, 38, 38, 0.85);
-        backdrop-filter: blur(5vw);
-
-        z-index: 10;
-    }
-
-    .nav.open {
-        display: flex;
-    }
-
-    .mainMenuLink {
-        width: 100%;
-
-        padding: 5% 0;
-        border-bottom: 0.2vw solid rgba(255, 255, 255, 0.4);
-
-        font-size: 6.5vw;
-    }
-
-    .mainMenuLink:first-child {
-        border-top: 0.2vw solid rgba(255, 255, 255, 0.4);
-    }
-
-    .mainMenuLink::after {
-        display: none;
-    }
-
     .burger.open {
         position: fixed;
         top: 8vw;
         right: 7%;
+        z-index: 20;
     }
 
     .burger.open span {
@@ -112,7 +76,1050 @@
     .burger.open span:nth-child(3) {
         transform: rotate(-45deg);
     }
+
     .bask.hide {
         display: none;
     }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 32vw 5% 0;
+        background-color: rgba(38, 38, 38, 0.85);
+        backdrop-filter: blur(5vw);
+        z-index: 10;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .mainMenuLink {
+        width: 100%;
+        padding: 5% 0;
+        border-bottom: 0.2vw solid rgba(255, 255, 255, 0.4);
+        font-size: 6.5vw;
+    }
+
+    .mainMenuLink:first-child {
+        border-top: 0.2vw solid rgba(255, 255, 255, 0.4);
+    }
+
+    .mainMenuLink::after {
+        display: none;
+    }
+
+    .firstScreen {
+        min-height: 120vw;
+        padding: 0 5%;
+        margin-bottom: 20vw;
+    }
+
+    .topLine {
+        margin-top: 2vw;
+    }
+
+    .mainTitle {
+        display: block;
+        padding-top: 2vw;
+    }
+
+    .mainTitle h1 {
+        font-size: 15vw;
+        line-height: 1.1;
+    }
+
+    .titleRight p {
+        margin-top: 2vw;
+        font-size: 18vw;
+        line-height: 0.9;
+    }
+
+    .middleLine {
+        margin-top: 4vw;
+    }
+
+    .mainInfo {
+        display: block;
+        padding-top: 4vw;
+    }
+
+    .textLeft,
+    .textRight {
+        display: none;
+    }
+
+    .mainPic {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 38vw;
+        margin: 4vw auto 0;
+        object-fit: cover;
+    }
+
+    .blueLine {
+        display: none;
+    }
+
+    .regButton {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: block;
+        width: 72%;
+        margin: 6vw auto 0;
+        padding: 2.3vw 0;
+        font-size: 3vw;
+    }
+
+    .raspisanie {
+        min-height: auto;
+        padding: 10% 0 12%;
+    }
+
+    .rasTitle {
+        margin-bottom: 8vw;
+        font-size: 13vw;
+    }
+
+    .eventBlock {
+        width: 100%;
+    }
+
+    .eventLine {
+        position: relative;
+        padding: 0;
+        border-top: 0.08vw solid rgba(255, 255, 255, 0.2);
+    }
+
+    .eventLine:last-child {
+        border-bottom: 0.08vw solid rgba(255, 255, 255, 0.2);
+    }
+
+    .eventLine p {
+        margin: 0;
+        padding: 2.5vw 0;
+        font-size: 8vw;
+    }
+
+    .eventLine:hover {
+        background-color: transparent;
+    }
+
+    .eventLine:hover .poster {
+        display: none;
+    }
+
+    .eventLine.open {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: transparent;
+    }
+
+    .eventLine.open p {
+        width: 100%;
+        background-color: #ff6720;
+        color: white;
+    }
+
+    .poster {
+        position: static;
+        display: none;
+        width: 29vw;
+        margin-top: 2vw;
+    }
+
+    .eventLine.open .poster {
+        display: block;
+    }
+
+    .eventLine.open .posterLeft {
+        margin-right: 1vw;
+    }
+
+    .eventLine.open .posterRight {
+        margin-left: 1vw;
+    }
+
+    .moreButton {
+        width: 72%;
+        margin-top: 9vw;
+        padding: 3vw 0;
+        font-size: 3vw;
+    }
+
+    .simpleBlock {
+        padding: 10% 6% 12%;
+    }
+
+    .simpleTop {
+        display: block;
+    }
+
+    .simpleTop h2 {
+        margin: 0;
+        font-size: 35vw;
+        line-height: 0.95;
+    }
+
+    .simpleTop img {
+        display: none;
+    }
+
+    .simpleMiddle {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    .simpleMiddle h2 {
+        margin: 0;
+        font-size: 24vw;
+        line-height: 0.95;
+    }
+
+    .simpleMiddle img {
+        width: 100%;
+        height: 48vw;
+        margin-top: 4vw;
+        margin-bottom: 5vw;
+        object-fit: cover;
+    }
+
+    .simpleBottomText {
+        margin-top: 0;
+        font-size: 12vw;
+        line-height: 1;
+    }
+
+    .simpleButton {
+        width: 78%;
+        margin: 7vw auto 0;
+        padding: 3.2vw 0;
+        font-size: 3vw;
+    }
+
+    .merch {
+        padding: 10% 5% 12%;
+    }
+
+    .merchTop {
+        display: block;
+        text-align: center;
+    }
+
+    .merchTop p {
+        display: none;
+    }
+
+    .merchTop h2 {
+        font-size: 16vw;
+    }
+
+    .merchList {
+        margin-top: 8vw;
+        border-top: 0.08vw solid rgba(255, 255, 255, 0.7);
+    }
+
+    .merchItem {
+        min-height: auto;
+        padding: 2.5vw 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-bottom: 0.08vw solid rgba(255, 255, 255, 0.7);
+    }
+
+    .merchNum {
+        width: 26%;
+        margin: 0;
+        padding-left: 4vw;
+        font-size: 6.5vw;
+    }
+
+    .merchName {
+        width: 50%;
+        margin: 0;
+        font-size: 6.5vw;
+    }
+
+    .buyLink {
+        display: block;
+        width: 24%;
+        margin: 0;
+        font-size: 3vw;
+        color: white;
+        text-align: right;
+    }
+
+    .merchPhoto {
+        position: static;
+        width: 55vw;
+        height: 55vw;
+        display: none;
+        margin: 4vw auto 1vw;
+        transform: none;
+        background-color: white;
+        border: 0.4vw dashed #ff6720;
+    }
+
+    .merchPhoto img {
+        width: 85%;
+        height: 85%;
+        object-fit: contain;
+    }
+
+    .merchItem:hover .merchNum,
+    .merchItem:hover .merchName {
+        color: white;
+    }
+
+    .merchItem:hover .merchPhoto {
+        display: none;
+    }
+
+    .merchItem:hover .buyLink {
+        display: block;
+    }
+
+    .merchItem.open .merchNum,
+    .merchItem.open .merchName,
+    .merchItem.open .buyLink {
+        color: #ff6720;
+    }
+
+    .merchItem.open .merchPhoto {
+        display: flex;
+    }
+
+    .merchButton {
+        width: 75%;
+        margin-top: 9vw;
+        padding: 3vw 0;
+        font-size: 4vw;
+    }
+
+    .connectBlock {
+        width: 90%;
+        margin: 8% 5%;
+        padding: 8% 5%;
+        display: block;
+        background-color: #0d86d8;
+    }
+
+    .connectText {
+        width: 100%;
+    }
+
+    .connectText h2 {
+        margin: 0;
+        font-size: 10vw;
+        line-height: 1.08;
+    }
+
+    .connectForm {
+        width: 100%;
+        margin-top: 8vw;
+        display: flex;
+        flex-direction: column;
+        gap: 6vw;
+    }
+
+    .formRow {
+        display: block;
+    }
+
+    .formRow input {
+        width: 100%;
+        margin-bottom: 6vw;
+    }
+
+    .connectForm input {
+        width: 100%;
+        padding: 0 0 1.6vw;
+        background: none;
+        border: none;
+        border-bottom: 0.2vw solid white;
+        font-size: 3.8vw;
+        color: white;
+    }
+
+    .connectForm input::placeholder {
+        color: white;
+    }
+
+    .connectForm button {
+        width: 100%;
+        margin-top: 1vw;
+        padding: 3vw 0;
+        background: rgba(38, 38, 38, 0.35);
+        border: 0.2vw solid white;
+        font-size: 3.5vw;
+        color: white;
+    }
+
+    .footer {
+        height: 95vw;
+        padding: 10% 6% 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footerLinks {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0;
+        position: relative;
+        z-index: 5;
+    }
+
+    .footerLeft,
+    .footerRight {
+        gap: 2vw;
+    }
+
+    .footerLink {
+        font-size: 3.8vw;
+        line-height: 1.3;
+    }
+
+    .footerInfo {
+        display: none;
+    }
+
+    .oopsPictures {
+        position: absolute;
+        left: 0;
+        bottom: 1vw;
+        width: 100%;
+        height: 65vw;
+        z-index: 1;
+    }
+
+    .oopsImg {
+        display: none;
+    }
+
+    .oopsMobile {
+        display: block;
+        position: absolute;
+        width: 95%;
+        left: 2.5%;
+    }
+
+    .oopsMobOne {
+        top: 0;
+    }
+
+    .oopsMobTwo {
+        top: 9vw;
+    }
+
+    .oopsMobThree {
+        top: 18vw;
+    }
+
+    .personaj {
+        position: absolute;
+        left: 50%;
+        bottom: 5vw;
+        width: 70vw;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+
+    .eventsCover {
+        min-height: 150vw;
+        padding: 0 5%;
+    }
+
+    .eventsCover h1 {
+        padding-top: 5vw;
+        font-size: 21vw;
+        line-height: 1;
+        text-align: left;
+    }
+
+    .eventsLine {
+        margin-top: 4vw;
+    }
+
+    .eventsInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5vw;
+    }
+
+    .eventsTextLeft {
+        display: none;
+    }
+
+    .eventsTextRight {
+        width: 80%;
+        margin: 9vw auto 0;
+        font-size: 4vw;
+        line-height: 1.35;
+        text-align: center;
+    }
+
+    .eventsPic {
+        position: static;
+        width: 100%;
+        height: 50vw;
+        transform: none;
+        object-fit: cover;
+    }
+
+    .eventsRun {
+        top: auto;
+        bottom: 20vw;
+    }
+
+    .eventsRun p {
+        padding: 2vw 0;
+        font-size: 5vw;
+    }
+
+    .eventsBottomLine {
+        display: none;
+    }
+
+    .eventsList {
+        padding: 8% 5% 10%;
+    }
+
+    .eventTop {
+        align-items: flex-start;
+        padding: 4vw 0;
+    }
+
+    .eventDate {
+        width: 32%;
+        font-size: 3.4vw;
+        line-height: 1.25;
+    }
+
+    .eventTop h2 {
+        width: 55%;
+        font-size: 3.4vw;
+        line-height: 1.25;
+    }
+
+    .eventArrow {
+        width: 3vw;
+        height: 3vw;
+        border-right: 0.2vw solid white;
+        border-bottom: 0.2vw solid white;
+    }
+
+    .eventContent {
+        padding-bottom: 6vw;
+    }
+
+    .eventItem.open .eventContent {
+        display: block;
+    }
+
+    .eventText {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .eventText p {
+        width: 100%;
+        margin: 0 0 4vw;
+        font-size: 3.5vw;
+        line-height: 1.35;
+    }
+
+    .eventButton {
+        width: 65%;
+        margin-top: 5vw;
+        padding: 3vw 0;
+        font-size: 3.2vw;
+    }
+
+    .eventPosters {
+        width: 100%;
+        margin-top: 6vw;
+        display: flex;
+        gap: 2vw;
+        justify-content: center;
+    }
+
+    .eventPosters img {
+        width: 30%;
+    }
+
+    .shopCover {
+        width: 90%;
+        min-height: auto;
+        margin: 0 auto 10vw;
+        padding: 0 0 10vw;
+        display: flex;
+        flex-direction: column;
+        border-top: 0.08vw solid white;
+        border-bottom: 0.08vw solid white;
+    }
+
+    .shopPictures {
+        order: 2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-right: none;
+    }
+
+    .shopTextBlock {
+        order: 1;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shopTextBlock h1 {
+        margin: 5vw 0 5vw;
+        font-size: 35vw;
+        line-height: 0.9;
+    }
+
+    .shopBanka,
+    .shopSonik {
+        display: block;
+        width: 40%;
+        height: 52vw;
+        object-fit: contain;
+    }
+
+    .shopTextBlock p {
+        order: 3;
+        width: 82%;
+        margin: 4vw auto 0;
+        font-size: 3vw;
+        line-height: 1.35;
+        text-align: center;
+    }
+
+    .shopCoverButton {
+        order: 4;
+        width: 80%;
+        margin: 5vw auto 0;
+        padding: 3vw 0;
+        font-size: 4vw;
+    }
+
+    .shopGoods {
+        height: auto;
+        padding: 10% 5% 12%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 10vw;
+        overflow: visible;
+    }
+
+    .shopWord {
+        display: none;
+    }
+
+    .good {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        height: auto;
+        margin-bottom: 4vw;
+    }
+
+    .goodPic {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .goodPic img {
+        width: 82%;
+        height: 82%;
+        object-fit: contain;
+    }
+
+    .goodCard {
+        width: 100%;
+        order: 1;
+    }
+
+    .goodCup {
+        width: 47%;
+        order: 2;
+    }
+
+    .goodLight {
+        width: 47%;
+        order: 3;
+    }
+
+    .goodShopper {
+        width: 100%;
+        order: 4;
+    }
+
+    .goodSpichki {
+        width: 47%;
+        order: 5;
+    }
+
+    .goodDisk {
+        width: 47%;
+        order: 6;
+    }
+
+    .goodCd,
+    .goodKosti {
+        display: none;
+    }
+
+    .goodCard .goodPic,
+    .goodShopper .goodPic {
+        aspect-ratio: 1 / 0.75;
+    }
+
+    .goodBottom {
+        margin-top: 1.2vw;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .goodBottom p {
+        padding: 0.8vw 1vw;
+        font-family: "Manrope", sans-serif;
+        font-size: 2.8vw;
+        font-weight: 400;
+        line-height: 1.05;
+    }
+
+    .goodBottom button {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .blueGood .goodPic {
+        border: 0.35vw solid #008be8;
+    }
+
+    .orangeGood .goodPic {
+        border: 0.35vw solid #ff6720;
+    }
+
+    .blueGood:hover .goodPic {
+        background-color: #008be8;
+    }
+
+    .orangeGood:hover .goodPic {
+        background-color: #ff6720;
+    }
+
+    .bookCover {
+        min-height: 145vw;
+        padding: 0 5% 10%;
+    }
+
+    .bookCover h1 {
+        padding-top: 4vw;
+        font-size: 12vw;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .bookLine {
+        margin-top: 5vw;
+    }
+
+    .bookCenter {
+        height: 72vw;
+        margin-top: 4vw;
+    }
+
+    .bookRun {
+        left: -5%;
+        top: 34vw;
+        width: 110%;
+    }
+
+    .bookRun p {
+        padding: 2vw 0;
+        font-size: 5vw;
+    }
+
+    .bookCar {
+        top: 4vw;
+        width: 105%;
+    }
+
+    .bookButton {
+        width: 75%;
+        margin-top: 5vw;
+        padding: 3vw 0;
+        font-size: 3.5vw;
+    }
+
+    .bookBottomLine {
+        margin-top: 10vw;
+    }
+
+    .bookSlider {
+        padding: 10% 5% 14%;
+    }
+
+    .bookSlider h2 {
+        margin: 0 0 8vw;
+        font-size: 15vw;
+        line-height: 1;
+    }
+
+    .sliderWrap {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sliderBox {
+        order: 1;
+        width: 100%;
+        min-height: auto;
+        padding: 5vw;
+        display: flex;
+        flex-direction: column;
+        background-color: #ed4f17;
+    }
+
+    .sliderImage {
+        order: 1;
+        width: 100%;
+        height: 62vw;
+    }
+
+    .sliderImage img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .sliderText {
+        order: 2;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding-top: 3vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sliderText h3 {
+        margin: 0 0 4vw;
+        font-size: 6vw;
+        line-height: 1.1;
+    }
+
+    .slideText,
+    .slideTextTwo {
+        margin: 0 0 3.5vw;
+        font-size: 3.8vw;
+        line-height: 1.35;
+    }
+
+    .sliderButton {
+        width: 100%;
+        margin-top: 3vw;
+        padding: 3vw 0;
+        font-size: 3.3vw;
+    }
+
+    .sliderArrow {
+        position: static;
+        width: 12vw;
+        height: 12vw;
+        margin-top: 5vw;
+        border: none;
+        background: none;
+        font-size: 13vw;
+        line-height: 0.7;
+        color: white;
+        z-index: 5;
+    }
+
+    .prevSlide {
+        order: 2;
+        margin-right: 8vw;
+    }
+
+    .nextSlide {
+        order: 3;
+        margin-left: 8vw;
+    }
+
+    .bookGallery {
+        padding: 10% 5% 14%;
+    }
+
+    .bookGallery h2 {
+        margin-bottom: 8vw;
+        font-size: 14vw;
+    }
+
+    .galleryColumns {
+        display: flex;
+        flex-direction: column;
+        gap: 4vw;
+    }
+
+    .galleryLeft,
+    .galleryRight {
+        width: 100%;
+        gap: 4vw;
+    }
+
+    .galleryRight {
+        order: 1;
+    }
+
+    .galleryLeft {
+        order: 2;
+    }
+
+    .galleryTopRow,
+    .galleryBottomRow {
+        display: flex;
+        gap: 4vw;
+    }
+
+    .galleryCard {
+        padding: 3vw;
+    }
+
+    .orangeGallery {
+        border: 0.35vw solid #ff6720;
+    }
+
+    .blueGallery {
+        border: 0.35vw solid #008be8;
+    }
+
+    .galleryCard h3 {
+        margin-bottom: 2vw;
+        font-size: 3.6vw;
+    }
+
+    .galleryCard p {
+        margin-top: 2vw;
+        font-size: 3.4vw;
+    }
+
+    .gallerySmall {
+        width: 50%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .galleryWide,
+    .galleryBig {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .galleryCard img {
+        width: 72%;
+        height: 72%;
+        object-fit: contain;
+    }
+
+    .galleryWide img,
+    .galleryBig img {
+        width: 78%;
+        height: 78%;
+    }
+    .popupBox {
+    width: 86%;
+    padding: 7vw 6vw;
+}
+.closePopup {
+    top: 3vw;
+    right: 4vw;
+    font-size: 8vw;
+}
+.popupBox h2 {
+    font-size: 8vw;
+}
+.popupText {
+    margin: 3vw 0 5vw;
+    font-size: 3.2vw;
+    line-height: 1.3;
+}
+.regForm {
+    gap: 3vw;
+}
+.regForm input,
+.regForm select {
+    padding: 3vw;
+    font-size: 3.5vw;
+}
+.regForm button {
+    margin-top: 2vw;
+    padding: 3vw;
+    font-size: 3.4vw;
+}
+.popupBox {
+    width: 86%;
+    padding: 7vw 6vw;
+}
+
+.closePopup {
+    top: 3vw;
+    right: 4vw;
+    font-size: 8vw;
+}
+
+.popupBox h2 {
+    font-size: 8vw;
+}
+
+.popupText {
+    margin: 3vw 0 5vw;
+    font-size: 3.2vw;
+    line-height: 1.3;
+}
+
+.regForm {
+    gap: 3vw;
+}
+
+.regForm input,
+.regForm select {
+    padding: 3vw;
+    font-size: 3.5vw;
+}
+
+.regForm button {
+    margin-top: 2vw;
+    padding: 3vw;
+    font-size: 3.4vw;
+}
+
 }

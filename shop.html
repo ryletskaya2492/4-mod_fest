@@ -1,66 +1,242 @@
+<!doctype html>
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Фестиваль цифровых ошибок</title>
+    <title>Магазин — Фестиваль цифровых ошибок</title>
 
-    <meta name="description" content="Веб-плакат о цифровых ошибках" />
-
+    <meta name="description" content="Мерч фестиваля цифровых ошибок" />
     <link rel="stylesheet" href="stylesheets/style.css" />
 
-    <link rel="icon" href="images/" type="image/png" />
-    <link rel="icon" href="images/" type="image/svg+xml" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet" />
-
-    <meta property="og:title" content="Фестиваль цифровых ошибок" />
+    <meta property="og:title" content="Магазин — Фестиваль цифровых ошибок" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Веб-плакат о цифровых ошибках" />
+    <meta property="og:description" content="Мерч фестиваля цифровых ошибок" />
     <meta property="og:image" content="images/og-image.png" />
     <meta property="og:url" content="" />
 
     <script src="javascripts/scripts.js" defer></script>
-    <script src="javascripts/index.js" defer></script>
 </head>
+
 <body>
     <header class="header">
         <a class="logo" href="index.html">
             <img src="images/logo.svg" alt="Логотип" />
         </a>
-    
+
         <nav class="nav">
             <a class="mainMenuLink" href="index.html">О фестивале</a>
             <a class="mainMenuLink" href="events.html">События</a>
             <a class="mainMenuLink active" href="shop.html">Магазин</a>
             <a class="mainMenuLink" href="book.html">Путеводитель</a>
         </nav>
-    
-    <div class="headerRight">
-    <a class="bask" href="shop.html">
-        <img src="images/basket.svg" alt="Корзина" />
-        <span class="cartCounter">
-            ( <span class="productCnt">0</span> )
-        </span>
-    </a>
-    
-        <button class="burger" type="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
+
+        <div class="headerRight">
+            <a class="bask" href="shop.html">
+                <img src="images/basket.svg" alt="Корзина" />
+                <span class="basketText">(0)</span>
+            </a>
+
+            <button class="burger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
+
     <main class="shopPage">
-    <section class="shopHero">
-        <span class="heroWord heroWordFind">НАЙДИ</span>
-        <span class="heroWord heroWordOwn">СВОЙ</span>
-        <span class="heroWord heroWordStyle">СТИЛЬ</span>
-        <span class="heroWord heroWordIn">В</span>
-        <span class="heroWord heroWordMistakes">ОШИБКАХ</span>
-    </section>
-    
-        <section class="productList"></section>
+        <section class="shopCover">
+            <div class="shopPictures">
+                <img class="shopBanka" src="images/banka.png" alt="Банка" />
+                <img class="shopSonik" src="images/sonik.png" alt="Соник" />
+            </div>
+
+            <div class="shopTextBlock">
+                <h1>МЕРЧ</h1>
+
+                <p>
+                    найди то, что подходит именно<br />
+                    тебе. мерч фестиваля включает<br />
+                    предметы, созданные в рамках<br />
+                    проекта и его визуальной системы.
+                </p>
+
+                <a class="shopCoverButton" href="#shopItems">КУПИТЬ</a>
+            </div>
+        </section>
+
+        <section class="shopGoods" id="shopItems">
+            <span class="shopWord wordFind">НАЙДИ</span>
+            <span class="shopWord wordOwn">СВОЙ</span>
+            <span class="shopWord wordStyle">СТИЛЬ</span>
+            <span class="shopWord wordIn">В</span>
+            <span class="shopWord wordMistakes">ОШИБКАХ</span>
+
+            <article class="good goodCard blueGood">
+                <div class="goodPic">
+                    <img src="images/karta.png" alt="Карта" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>КАРТА<br />500₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+
+            <article class="good goodCup orangeGood">
+                <div class="goodPic">
+                    <img src="images/cup.png" alt="Стакан" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>СТАКАН<br />210₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+
+            <article class="good goodLight orangeGood">
+                <div class="goodPic">
+                    <img src="images/lighter.png" alt="Зажигалка" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>ЗАЖИГАЛКА<br />500₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+
+            <article class="good goodSpichki orangeGood">
+                <div class="goodPic">
+                    <img src="images/spichki.png" alt="Спички" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>СПИЧКИ<br />500₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+
+            <article class="good goodShopper blueGood">
+                <div class="goodPic">
+                    <img src="images/shoper.png" alt="Шопер" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>ШОПЕР<br />1200₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+
+            <article class="good goodDisk blueGood">
+                <div class="goodPic">
+                    <img src="images/disk.png" alt="Диск" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>ДИСК<br />400₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+
+            <article class="good goodCd orangeGood">
+                <div class="goodPic">
+                    <img src="images/cd.png" alt="Жесткий диск" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>ЖЕСТКИЙ ДИСК<br />500₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+
+            <article class="good goodKosti orangeGood">
+                <div class="goodPic">
+                    <img src="images/kosti.png" alt="Кости" />
+                </div>
+
+                <div class="goodBottom">
+                    <p>КОСТИ<br />120₽</p>
+                    <button type="button">
+                        <img src="images/basket.svg" alt="В корзину" />
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <section class="connectBlock">
+            <div class="connectText">
+                <h2>
+                    БУДЕМ<br />
+                    НА СВЯЗИ
+                </h2>
+            </div>
+
+            <form class="connectForm">
+                <input type="text" placeholder="ВАШЕ ИМЯ*" />
+
+                <div class="formRow">
+                    <input type="email" placeholder="ЭМЕЙЛ*" />
+                    <input type="text" placeholder="ТЕЛЕФОН" />
+                </div>
+
+                <input type="text" placeholder="ВАШЕ СООБЩЕНИЕ" />
+
+                <button type="submit">ОТПРАВИТЬ</button>
+            </form>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="footerLinks">
+            <div class="footerLeft">
+                <a class="footerLink" href="index.html">О фестивале</a>
+                <a class="footerLink" href="events.html">События</a>
+            </div>
+    
+            <div class="footerRight">
+                <a class="footerLink active" href="shop.html">Магазин</a>
+                <a class="footerLink" href="book.html">Путеводитель</a>
+            </div>
+        </div>
+    
+        <div class="footerInfo">
+            <p>2026 Фестиваль OOPS</p>
+            <p>Правовая информация</p>
+            <p>Политика</p>
+            <p>Пользовательское соглашение</p>
+        </div>
+    
+        <div class="oopsPictures">
+            <img class="oopsImg oopsOne" src="images/oops.png" alt="OOPS" />
+            <img class="oopsImg oopsTwo" src="images/oops.png" alt="OOPS" />
+            <img class="oopsImg oopsThree" src="images/oops.png" alt="OOPS" />
+    
+            <img class="oopsMobile oopsMobOne" src="images/oops_m.png" alt="OOPS" />
+            <img class="oopsMobile oopsMobTwo" src="images/oops_m.png" alt="OOPS" />
+            <img class="oopsMobile oopsMobThree" src="images/oops_m.png" alt="OOPS" />
+        </div>
+    
+        <img class="personaj" src="images/personaj.png" alt="Персонаж" />
+    </footer>
 </body>
+
+</html>

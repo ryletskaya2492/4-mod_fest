@@ -1,51 +1,316 @@
+<!doctype html>
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Фестиваль цифровых ошибок</title>
+    <title>События — Фестиваль цифровых ошибок</title>
 
-    <meta name="description" content="Веб-плакат о цифровых ошибках" />
+    <meta name="description" content="События фестиваля цифровых ошибок" />
 
     <link rel="stylesheet" href="stylesheets/style.css" />
 
-    <link rel="icon" href="images/" type="image/png" />
-    <link rel="icon" href="images/" type="image/svg+xml" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet" />
-
-    <meta property="og:title" content="Фестиваль цифровых ошибок" />
+    <meta property="og:title" content="События — Фестиваль цифровых ошибок" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Веб-плакат о цифровых ошибках" />
+    <meta property="og:description" content="События фестиваля цифровых ошибок" />
     <meta property="og:image" content="images/og-image.png" />
     <meta property="og:url" content="" />
 
     <script src="javascripts/scripts.js" defer></script>
-    <script src="javascripts/index.js" defer></script>
 </head>
+
 <body>
     <header class="header">
         <a class="logo" href="index.html">
             <img src="images/logo.svg" alt="Логотип" />
         </a>
-    
+
         <nav class="nav">
             <a class="mainMenuLink" href="index.html">О фестивале</a>
             <a class="mainMenuLink active" href="events.html">События</a>
             <a class="mainMenuLink" href="shop.html">Магазин</a>
             <a class="mainMenuLink" href="book.html">Путеводитель</a>
         </nav>
-    
+
         <div class="headerRight">
             <a class="bask" href="shop.html">
                 <img src="images/basket.svg" alt="Корзина" />
             </a>
-        
+
             <button class="burger" type="button">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
+    </header>
+
+    <main class="eventsPage">
+        <section class="eventsCover">
+            <h1>СОБЫТИЯ</h1>
+
+            <div class="eventsLine"></div>
+
+            <div class="eventsInfo">
+                <p class="eventsTextLeft">
+                    лекции, мастер-классы и<br />
+                    обсуждения, посвящённые<br />
+                    цифровым сбоям и ошибкам.
+                </p>
+
+                <img class="eventsPic" src="images/snail.png" alt="Улитка" />
+
+                <p class="eventsTextRight">
+                    лекции, мастер-классы<br />
+                    и выставки, исследующие<br />
+                    цифровые сбои и нестабильность.
+                </p>
+            </div>
+
+            <div class="eventsRun">
+                <p>
+                    ERROR_404 / BUFFER_OVERFLOW / TIMEOUT / INVALID_SYNTAX /
+                    REBOOT_REQUIRED / INPUT_FAILURE / ACCESS_DENIED / ERROR_404 /
+                    BUFFER_OVERFLOW
+                </p>
+            </div>
+
+            <div class="eventsBottomLine"></div>
+        </section>
+    </main>
+    <section class="eventsList">
+        <div class="eventItem open">
+            <div class="eventTop">
+                <p class="eventDate">2 сентября 2026</p>
+                <h2>ЛЕКЦИИ ОБ ОШИБКЕ 404</h2>
+                <button class="eventArrow" type="button"></button>
+            </div>
+    
+            <div class="eventContent">
+                <div class="eventText">
+                    <p>
+                        ошибка 404 — одна из самых известных ошибок,
+                        с которой сталкивается каждый пользователь интернета.
+                    </p>
+    
+                    <p>
+                        эта лекция посвящена тому, как и почему возникает ошибка 404,
+                        и какие она вызывает последствия как для пользователей,
+                        так и для разработчиков.
+                    </p>
+    
+                    <a class="eventButton" href="https://ryletskaya2492.github.io/fest_3/" target="_blank">ПОДРОБНЕЕ</a>
+                </div>
+    
+                <div class="eventPosters">
+                    <img src="images/404_1.png" alt="Плакат 404" />
+                    <img src="images/404_2.png" alt="Плакат 404" />
+                </div>
+            </div>
+        </div>
+    
+        <div class="eventItem">
+            <div class="eventTop">
+                <p class="eventDate">3 сентября 2026</p>
+                <h2>МАСТЕР-КЛАСС 403</h2>
+                <button class="eventArrow" type="button"></button>
+            </div>
+    
+            <div class="eventContent">
+                <div class="eventText">
+                    <p>
+                        ошибка 403 появляется, когда доступ к странице запрещён.
+                        на мастер-классе мы разберём, как работает ограничение доступа.
+                    </p>
+    
+                    <p>
+                        участники создадут собственный визуальный сценарий ошибки
+                        и превратят технический сбой в часть цифрового плаката.
+                    </p>
+    
+                    <a class="eventButton" href="https://ryletskaya2492.github.io/errors_festival/"target="_blank">ПОДРОБНЕЕ</a>
+                </div>
+    
+                <div class="eventPosters">
+                    <img src="images/403_1.png" alt="Плакат 403" />
+                    <img src="images/403_2.png" alt="Плакат 403" />
+                </div>
+            </div>
+        </div>
+    
+        <div class="eventItem">
+            <div class="eventTop">
+                <p class="eventDate">3 сентября 2026</p>
+                <h2>ЛЕКЦИЯ ПРО СИНТАКСИС</h2>
+                <button class="eventArrow" type="button"></button>
+            </div>
+    
+            <div class="eventContent">
+                <div class="eventText">
+                    <p>
+                        синтаксическая ошибка возникает из-за неправильной структуры команды.
+                        на лекции поговорим о том, почему машина не всегда понимает человека.
+                    </p>
+    
+                    <p>
+                        участники увидят, как маленькая опечатка может сломать целую систему
+                        и стать началом визуального сбоя.
+                    </p>
+    
+                    <a class="eventButton" href="404.html">ПОДРОБНЕЕ</a>
+                </div>
+    
+                <div class="eventPosters">
+                    <img src="images/301_1.png" alt="Плакат синтаксис" />
+                    <img src="images/301_2.png" alt="Плакат синтаксис" />
+                </div>
+            </div>
+        </div>
+    
+        <div class="eventItem">
+            <div class="eventTop">
+                <p class="eventDate">4 сентября 2026</p>
+                <h2>ПЕРЕГРЕВ СИСТЕМЫ</h2>
+                <button class="eventArrow" type="button"></button>
+            </div>
+    
+            <div class="eventContent">
+                <div class="eventText">
+                    <p>
+                        перегрев системы — это состояние, в котором процессы больше
+                        не справляются с нагрузкой и начинают разрушаться.
+                    </p>
+    
+                    <p>
+                        встреча посвящена цифровой усталости, визуальному шуму
+                        и ошибкам, которые появляются из-за перенапряжения.
+                    </p>
+    
+                    <a class="eventButton" href="404.html">ПОДРОБНЕЕ</a>
+                </div>
+    
+                <div class="eventPosters">
+                    <img src="images/502_1.png" alt="Плакат 502" />
+                    <img src="images/502_2.png" alt="Плакат 502" />
+                </div>
+            </div>
+        </div>
+    
+        <div class="eventItem">
+            <div class="eventTop">
+                <p class="eventDate">5 сентября 2026</p>
+                <h2>ОШИБКА ЗАГРУЗКИ</h2>
+                <button class="eventArrow" type="button"></button>
+            </div>
+    
+            <div class="eventContent">
+                <div class="eventText">
+                    <p>
+                        ошибка загрузки — это момент, когда ожидание превращается
+                        в сбой, а интерфейс перестаёт отвечать пользователю.
+                    </p>
+    
+                    <p>
+                        на занятии участники исследуют экраны ожидания,
+                        зависшие процессы и визуальный язык незавершённости.
+                    </p>
+    
+                    <a class="eventButton" href="404.html">ПОДРОБНЕЕ</a>
+                </div>
+    
+                <div class="eventPosters">
+                    <img src="images/404_1.png" alt="Плакат ошибки загрузки" />
+                    <img src="images/404_2.png" alt="Плакат ошибки загрузки" />
+                </div>
+            </div>
+        </div>
+    
+        <div class="eventItem">
+            <div class="eventTop">
+                <p class="eventDate">5 сентября 2026</p>
+                <h2>БЕЗ РЕНДЕРА!</h2>
+                <button class="eventArrow" type="button"></button>
+            </div>
+    
+            <div class="eventContent">
+                <div class="eventText">
+                    <p>
+                        иногда изображение не появляется, объект не собирается,
+                        а сцена остаётся пустой. это тоже часть цифрового опыта.
+                    </p>
+    
+                    <p>
+                        событие посвящено невидимым ошибкам, сломанным файлам
+                        и состояниям, когда результат так и не был загружен.
+                    </p>
+    
+                    <a class="eventButton" href="404.html">ПОДРОБНЕЕ</a>
+                </div>
+    
+                <div class="eventPosters">
+                    <img src="images/403_1.png" alt="Плакат без рендера" />
+                    <img src="images/403_2.png" alt="Плакат без рендера" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="connectBlock">
+        <div class="connectText">
+            <h2>
+                БУДЕМ<br />
+                НА СВЯЗИ
+            </h2>
+        </div>
+    
+        <form class="connectForm">
+            <input type="text" placeholder="ВАШЕ ИМЯ*" />
+    
+            <div class="formRow">
+                <input type="email" placeholder="ЭМЕЙЛ*" />
+                <input type="text" placeholder="ТЕЛЕФОН" />
+            </div>
+    
+            <input type="text" placeholder="ВАШЕ СООБЩЕНИЕ" />
+    
+            <button type="submit">ОТПРАВИТЬ</button>
+        </form>
+    </section>
+<footer class="footer">
+    <div class="footerLinks">
+        <div class="footerLeft">
+            <a class="footerLink" href="index.html">О фестивале</a>
+            <a class="footerLink" href="events.html">События</a>
+        </div>
+
+        <div class="footerRight">
+            <a class="footerLink active" href="shop.html">Магазин</a>
+            <a class="footerLink" href="book.html">Путеводитель</a>
+        </div>
+    </div>
+
+    <div class="footerInfo">
+        <p>2026 Фестиваль OOPS</p>
+        <p>Правовая информация</p>
+        <p>Политика</p>
+        <p>Пользовательское соглашение</p>
+    </div>
+
+    <div class="oopsPictures">
+        <img class="oopsImg oopsOne" src="images/oops.png" alt="OOPS" />
+        <img class="oopsImg oopsTwo" src="images/oops.png" alt="OOPS" />
+        <img class="oopsImg oopsThree" src="images/oops.png" alt="OOPS" />
+
+        <img class="oopsMobile oopsMobOne" src="images/oops_m.png" alt="OOPS" />
+        <img class="oopsMobile oopsMobTwo" src="images/oops_m.png" alt="OOPS" />
+        <img class="oopsMobile oopsMobThree" src="images/oops_m.png" alt="OOPS" />
+    </div>
+
+    <img class="personaj" src="images/personaj.png" alt="Персонаж" />
+</footer>
 </body>
+
+</html>
