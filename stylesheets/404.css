@@ -106,27 +106,26 @@ body {
     }
 
     .bigError {
-        width: 190%;
         gap: 3vw;
     }
 
     .bigError span {
-        font-size: 88vw;
+        font-size: 60vw;
     }
 
     .errorBox {
-        width: 88%;
+        width: 50%;
         padding: 5vw 4vw 6vw;
     }
 
     .errorBox h1 {
-        font-size: 11vw;
+        font-size: 5vw;
         line-height: 1.05;
     }
 
     .errorBox p {
         margin-top: 4vw;
-        font-size: 4.8vw;
+        font-size: 3vw;
         line-height: 1.2;
     }
 
