@@ -19,6 +19,7 @@ body {
 }
 
 .header {
+    /* чтобы не скроллилось */
     position: sticky;
     top: 0;
     z-index: 40;
@@ -53,10 +54,10 @@ body {
     font-size: 1.2vw;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* для подчеркивания в менб*/
 .mainMenuLink.active,
 .mainMenuLink:hover {
     color: white;
@@ -88,7 +89,6 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5vw;
-    text-decoration: none;
     color: white;
 }
 
@@ -122,6 +122,7 @@ body {
     z-index: 20;
 }
 
+/* типо крестик в бургер меню */
 .burger.open span:nth-child(1) {
     position: absolute;
     transform: rotate(45deg);
@@ -239,6 +240,7 @@ body {
     font-family: "Feature Mono", monospace;
     font-size: 1.4vw;
     color: white;
+    /* бегующая */
     animation: lineMove 15s linear infinite;
 }
 
@@ -316,6 +318,7 @@ body {
     gap: 1vw;
 }
 
+/* поля ввода */
 .regForm input,
 .regForm select {
     width: 100%;
@@ -327,6 +330,7 @@ body {
     color: white;
 }
 
+/* подсказки внутри поля */
 .regForm input::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
@@ -380,10 +384,12 @@ body {
     position: relative;
     width: 100%;
     padding: 1.5vw 0;
+    /* линия сверху */
     border-top: 0.08vw dashed rgba(255, 255, 255, 0.25);
     transition: background-color 0.3s ease;
 }
 
+/* добавление пунктира полсе строки последней */
 .eventLine:last-child {
     border-bottom: 0.08vw dashed rgba(255, 255, 255, 0.25);
 }
@@ -471,7 +477,7 @@ body {
 .simpleTop img {
     width: 61%;
     height: 9vw;
-    object-fit: cover;
+
 }
 
 .simpleMiddle {
@@ -484,7 +490,6 @@ body {
 .simpleMiddle img {
     width: 50%;
     height: 11vw;
-    object-fit: cover;
 }
 
 .simpleMiddle h2 {
@@ -607,6 +612,7 @@ body {
     z-index: 6;
 }
 
+/* меняется цвет при наведении */
 .merchItem:hover .merchNum,
 .merchItem:hover .merchName {
     color: #ff6720;
@@ -631,7 +637,6 @@ body {
     font-weight: 600;
     text-align: center;
     color: white;
-    text-decoration: none;
 }
 
 .merchButton:hover {
@@ -757,6 +762,7 @@ body {
     z-index: 5;
 }
 
+/* отступ чтобы персонаж не закрывал */
 .footerInfo p:nth-child(3) {
     margin-left: 4vw;
 }
@@ -944,6 +950,7 @@ body {
     text-transform: uppercase;
 }
 
+/* стрелочки для списка */
 .eventArrow {
     width: 1.7vw;
     height: 1.7vw;
@@ -965,6 +972,7 @@ body {
     padding-bottom: 2.5vw;
 }
 
+/* когда открыто, чтобы было флекс контейнер */
 .eventItem.open .eventContent {
     display: flex;
     justify-content: space-between;
@@ -1203,6 +1211,7 @@ body {
     object-fit: contain;
 }
 
+/* картинки товаров */
 .goodCard {
     width: 22vw;
     height: 29vw;
@@ -1424,7 +1433,6 @@ body {
     font-weight: 600;
     color: white;
     text-align: center;
-    text-decoration: none;
 }
 
 .sliderButton:hover {

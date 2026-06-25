@@ -24,8 +24,8 @@ if (closePopup) {
   };
 }
 
+// список
 let eventLines = document.querySelectorAll(".eventLine");
-
 eventLines.forEach(function (line) {
   line.onclick = function () {
     eventLines.forEach(function (item) {
@@ -35,8 +35,8 @@ eventLines.forEach(function (line) {
     line.classList.add("open");
   };
 });
-let merchItems = document.querySelectorAll(".merchItem");
 
+let merchItems = document.querySelectorAll(".merchItem");
 merchItems.forEach(function (item) {
   item.onclick = function () {
     merchItems.forEach(function (card) {
@@ -50,7 +50,6 @@ let eventItems = document.querySelectorAll(".eventItem");
 
 eventItems.forEach(function (item) {
   let button = item.querySelector(".eventArrow");
-
   button.onclick = function () {
     eventItems.forEach(function (otherItem) {
       if (otherItem !== item) {
@@ -61,22 +60,24 @@ eventItems.forEach(function (item) {
     item.classList.toggle("open");
   };
 });
+
+// счетчик для корзины
 let basketText = document.querySelector(".basketText");
+// кнопки в карточках
 let goodButtons = document.querySelectorAll(".goodBottom button");
-
 let basketCount = 0;
-
 goodButtons.forEach(function (button) {
   button.onclick = function () {
     basketCount = basketCount + 1;
     basketText.textContent = "(" + basketCount + ")";
   };
 });
+
+// листалка книги
 let slideTitle = document.querySelector(".slideTitle");
 let slideText = document.querySelector(".slideText");
 let slideTextTwo = document.querySelector(".slideTextTwo");
 let slideImage = document.querySelector(".slideImage");
-
 let prevSlide = document.querySelector(".prevSlide");
 let nextSlide = document.querySelector(".nextSlide");
 
@@ -122,6 +123,7 @@ function showSlide() {
   slideImage.src = slides[currentSlide].image;
 }
 
+// листание, типо если счетчик +1, то надо другой контент поставить
 if (nextSlide) {
   nextSlide.onclick = function () {
     currentSlide = currentSlide + 1;
@@ -134,6 +136,7 @@ if (nextSlide) {
   };
 }
 
+// и типо назад тоже самое
 if (prevSlide) {
   prevSlide.onclick = function () {
     currentSlide = currentSlide - 1;
